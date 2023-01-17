@@ -1,0 +1,95 @@
+[
+    {
+        "id": "665eca98aa4c09a9",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "5d7175317427d5bb",
+        "type": "inject",
+        "z": "665eca98aa4c09a9",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 200,
+        "wires": [
+            [
+                "e0ca49da824070f5"
+            ]
+        ]
+    },
+    {
+        "id": "e0ca49da824070f5",
+        "type": "http request",
+        "z": "665eca98aa4c09a9",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.sampleapis.com/futurama/characters",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 350,
+        "y": 160,
+        "wires": [
+            [
+                "665317b315015afd"
+            ]
+        ]
+    },
+    {
+        "id": "a5330937b4ddc700",
+        "type": "debug",
+        "z": "665eca98aa4c09a9",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "665317b315015afd",
+        "type": "json",
+        "z": "665eca98aa4c09a9",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 510,
+        "y": 320,
+        "wires": [
+            [
+                "a5330937b4ddc700"
+            ]
+        ]
+    }
+]
